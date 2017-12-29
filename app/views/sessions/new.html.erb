@@ -1,0 +1,28 @@
+<div class="text-center">
+	<h1>Log in</h1>
+</div>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for(:session, url: login_path) do |f| %>
+		
+			<div class="form-group">
+				<%= f.label :email, "メールアドレス" %>
+				<%= f.email_field :email, class: "form-control" %>
+			</div>
+			
+			<div class="form-group">
+				<%= f.label :password, "パスワード" %>
+				<%= f.password_field :password, class: "form-control" %>
+			</div>
+			
+			<div class="form-group">
+				<%= f.label :password_confirmation, "確認" %>
+				<%= f.password_field :password_confirmation, class: "form-control" %>
+			</div>
+			
+			<%= f.submit "Log in", class: "btn btn-primary btn-block" %>
+		<% end %>
+		<p>まだ登録していない方は<%= link_to 'こちら', signup_path %>から</p>
+	</div>
+</div>
